@@ -8,13 +8,7 @@
             "name": "Dart: Domain test",
             "type": "dart",
             "request": "launch",
-            "program": "test/domain_test.dart"
-        },
-        {
-            "name": "Dart: Widget test",
-            "type": "dart",
-            "request": "launch",
-            "program": "test/widget_test.dart"
+            "program": "domain/test/domain_test.dart"
         },
         {
             "name": "Dev Debug",

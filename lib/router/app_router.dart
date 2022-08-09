@@ -1,25 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template_project/environment/environment.dart';
-import 'package:flutter_template_project/factory/bloc/my_home_bloc_factory.dart';
+import 'package:flutter_template_project/router/route_to_bloc_mapper.dart';
 
 class AppRouter {
-  static const myHomeRoute = '/';
+  final Environment _environment;
+  AppRouter(this._environment);
 
-  final Environment environment;
-  AppRouter(this.environment);
-
-  late final _myHomeBlocFactory = MyHomeBlocFactory(environment);
+  late final _mapper = RouteToBlocMapper(_environment);
 
   Route<dynamic> getRoute(RouteSettings settings) {
-    return MaterialPageRoute(builder: (_) => _getPage(settings));
+    return MaterialPageRoute(builder: (_) => _mapper.getBlocFactory(settings).createBloc());
   }
-
-  Widget _getPage(RouteSettings settings) {
-    switch(settings.name) {
-      case myHomeRoute: return _myHomeBlocFactory.createBloc(); 
-      default: return _myHomeBlocFactory.createBloc();
-    }
-  }
-  
-  
 }

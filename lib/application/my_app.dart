@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template_project/environment/environment.dart';
-import 'package:flutter_template_project/pages/my_home_page.dart';
+import 'package:flutter_template_project/router/app_route.dart';
 import 'package:flutter_template_project/router/app_router.dart';
 
 class MyApp extends StatelessWidget {
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      initialRoute: AppRouter.myHomeRoute,
+      initialRoute: AppRoute.myHome,
       onGenerateRoute: router.getRoute,
       debugShowCheckedModeBanner: false,
     );
